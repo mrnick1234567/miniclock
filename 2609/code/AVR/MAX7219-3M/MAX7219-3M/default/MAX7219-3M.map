@@ -1,0 +1,398 @@
+Archive member included because of file (symbol)
+
+d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
+                              MAX7219-3M.o (__udivmodqi4)
+d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                              d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm64.o (exit)
+d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+                              MAX7219-3M.o (__do_copy_data)
+d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+                              MAX7219-3M.o (__do_clear_bss)
+
+Allocating common symbols
+Common symbol       size              file
+
+font_loop           0x2a0             MAX7219-3M.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00020000         xr
+data             0x00800060         0x0000ffa0         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+fuse             0x00820000         0x00000400         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+Address of section .data set to 0x800100
+LOAD d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm64.o
+LOAD MAX7219-3M.o
+LOAD d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
+LOAD d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a
+LOAD d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00000000      0x4d0
+ *(.vectors)
+ .vectors       0x00000000       0x8c d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm64.o
+                0x00000000                __vectors
+                0x00000000                __vector_default
+ *(.vectors)
+ *(.progmem.gcc*)
+ *(.progmem*)
+                0x0000008c                . = ALIGN (0x2)
+                0x0000008c                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x0000008c        0x0 linker stubs
+ *(.trampolines*)
+                0x0000008c                __trampolines_end = .
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x0000008c                __ctors_start = .
+ *(.ctors)
+                0x0000008c                __ctors_end = .
+                0x0000008c                __dtors_start = .
+ *(.dtors)
+                0x0000008c                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x0000008c        0x0 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm64.o
+                0x0000008c                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x0000008c        0xc d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm64.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x00000098       0x16 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+                0x00000098                __do_copy_data
+ .init4         0x000000ae       0x10 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+                0x000000ae                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x000000be        0x8 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm64.o
+ *(.init9)
+ *(.text)
+ .text          0x000000c6        0x4 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm64.o
+                0x000000c6                __vector_22
+                0x000000c6                __vector_28
+                0x000000c6                __vector_1
+                0x000000c6                __vector_32
+                0x000000c6                __vector_34
+                0x000000c6                __vector_24
+                0x000000c6                __vector_12
+                0x000000c6                __bad_interrupt
+                0x000000c6                __vector_6
+                0x000000c6                __vector_31
+                0x000000c6                __vector_3
+                0x000000c6                __vector_23
+                0x000000c6                __vector_30
+                0x000000c6                __vector_25
+                0x000000c6                __vector_11
+                0x000000c6                __vector_13
+                0x000000c6                __vector_17
+                0x000000c6                __vector_19
+                0x000000c6                __vector_7
+                0x000000c6                __vector_27
+                0x000000c6                __vector_5
+                0x000000c6                __vector_33
+                0x000000c6                __vector_4
+                0x000000c6                __vector_9
+                0x000000c6                __vector_2
+                0x000000c6                __vector_21
+                0x000000c6                __vector_15
+                0x000000c6                __vector_29
+                0x000000c6                __vector_8
+                0x000000c6                __vector_26
+                0x000000c6                __vector_14
+                0x000000c6                __vector_10
+                0x000000c6                __vector_16
+                0x000000c6                __vector_18
+                0x000000c6                __vector_20
+ .text          0x000000ca      0x3ea MAX7219-3M.o
+                0x000001f8                Write_Max7219_byte
+                0x00000212                Write_Max7219
+                0x00000342                Mov_bity
+                0x0000049e                main
+                0x000001f6                Delay_xms
+                0x00000262                Initial_comm
+                0x000002c0                write_word
+                0x0000028c                Init_MAX7219
+                0x000000e2                font_charge
+                0x000000ca                Change_bit
+ .text          0x000004b4        0x0 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
+ .text          0x000004b4        0x0 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text          0x000004b4        0x0 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .text          0x000004b4        0x0 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+                0x000004b4                . = ALIGN (0x2)
+ *(.text.*)
+ .text.libgcc   0x000004b4       0x18 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
+                0x000004b4                __udivmodqi4
+ .text.libgcc   0x000004cc        0x0 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x000004cc        0x0 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x000004cc        0x0 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+                0x000004cc                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x000004cc        0x0 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x000004cc                exit
+                0x000004cc                _exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x000004cc        0x4 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ *(.fini0)
+                0x000004d0                _etext = .
+
+.data           0x00800100      0x2a0 load address 0x000004d0
+                0x00800100                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x00800100        0x0 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm64.o
+ .data          0x00800100      0x2a0 MAX7219-3M.o
+                0x00800100                font
+ .data          0x008003a0        0x0 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
+ .data          0x008003a0        0x0 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .data          0x008003a0        0x0 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .data          0x008003a0        0x0 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ *(.data*)
+ *(.rodata)
+ *(.rodata*)
+ *(.gnu.linkonce.d*)
+                0x008003a0                . = ALIGN (0x2)
+                0x008003a0                _edata = .
+                0x008003a0                PROVIDE (__data_end, .)
+
+.bss            0x008003a0      0x2a0
+                0x008003a0                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x008003a0        0x0 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm64.o
+ .bss           0x008003a0        0x0 MAX7219-3M.o
+ .bss           0x008003a0        0x0 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
+ .bss           0x008003a0        0x0 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .bss           0x008003a0        0x0 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .bss           0x008003a0        0x0 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ *(.bss*)
+ *(COMMON)
+ COMMON         0x008003a0      0x2a0 MAX7219-3M.o
+                0x008003a0                font_loop
+                0x00800640                PROVIDE (__bss_end, .)
+                0x000004d0                __data_load_start = LOADADDR (.data)
+                0x00000770                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x00800640        0x0
+                0x00800640                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x00800640                PROVIDE (__noinit_end, .)
+                0x00800640                _end = .
+                0x00800640                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment
+ *(.comment)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000       0x20
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x20 MAX7219-3M.o
+
+.debug_pubnames
+                0x00000000       0xc6
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x00000000       0xc6 MAX7219-3M.o
+
+.debug_info     0x00000000      0x348
+ *(.debug_info)
+ .debug_info    0x00000000      0x348 MAX7219-3M.o
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev   0x00000000      0x17b
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x17b MAX7219-3M.o
+
+.debug_line     0x00000000      0x35f
+ *(.debug_line)
+ .debug_line    0x00000000      0x35f MAX7219-3M.o
+
+.debug_frame    0x00000000       0xb0
+ *(.debug_frame)
+ .debug_frame   0x00000000       0xb0 MAX7219-3M.o
+
+.debug_str      0x00000000      0x123
+ *(.debug_str)
+ .debug_str     0x00000000      0x123 MAX7219-3M.o
+                                0x163 (size before relaxing)
+
+.debug_loc      0x00000000      0x174
+ *(.debug_loc)
+ .debug_loc     0x00000000      0x174 MAX7219-3M.o
+
+.debug_macinfo
+ *(.debug_macinfo)
+OUTPUT(MAX7219-3M.elf elf32-avr)
+LOAD linker stubs

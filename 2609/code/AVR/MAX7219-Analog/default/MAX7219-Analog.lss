@@ -1,0 +1,416 @@
+
+MAX7219-Analog.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000120  00800100  00000286  000002fa  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000286  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .debug_aranges 00000020  00000000  00000000  0000041a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  3 .debug_pubnames 00000069  00000000  00000000  0000043a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_info   0000016b  00000000  00000000  000004a3  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_abbrev 000000c8  00000000  00000000  0000060e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_line   00000175  00000000  00000000  000006d6  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_frame  00000060  00000000  00000000  0000084c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_str    000000d3  00000000  00000000  000008ac  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+   4:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+   8:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+   c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  10:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  14:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  18:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  1c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  20:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  24:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  28:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  2c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  30:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  34:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  38:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  3c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  40:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  44:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  48:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  4c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  50:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  54:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  58:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  5c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  60:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  64:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  68:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  6c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  70:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  74:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  78:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  7c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  80:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  84:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  88:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+  98:	12 e0       	ldi	r17, 0x02	; 2
+  9a:	a0 e0       	ldi	r26, 0x00	; 0
+  9c:	b1 e0       	ldi	r27, 0x01	; 1
+  9e:	e6 e8       	ldi	r30, 0x86	; 134
+  a0:	f2 e0       	ldi	r31, 0x02	; 2
+  a2:	02 c0       	rjmp	.+4      	; 0xa8 <.do_copy_data_start>
+
+000000a4 <.do_copy_data_loop>:
+  a4:	05 90       	lpm	r0, Z+
+  a6:	0d 92       	st	X+, r0
+
+000000a8 <.do_copy_data_start>:
+  a8:	a0 32       	cpi	r26, 0x20	; 32
+  aa:	b1 07       	cpc	r27, r17
+  ac:	d9 f7       	brne	.-10     	; 0xa4 <.do_copy_data_loop>
+  ae:	0e 94 ff 00 	call	0x1fe	; 0x1fe <main>
+  b2:	0c 94 41 01 	jmp	0x282	; 0x282 <_exit>
+
+000000b6 <__bad_interrupt>:
+  b6:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000ba <delay>:
+{0x41,0x22,0x14,0x8,0x8,0x8,0x8,0x8},//Y
+{0x0,0x7F,0x2,0x4,0x8,0x10,0x20,0x7F},//Z
+};
+
+void delay(int x)
+{
+  ba:	df 93       	push	r29
+  bc:	cf 93       	push	r28
+  be:	00 d0       	rcall	.+0      	; 0xc0 <delay+0x6>
+  c0:	00 d0       	rcall	.+0      	; 0xc2 <delay+0x8>
+  c2:	0f 92       	push	r0
+  c4:	cd b7       	in	r28, 0x3d	; 61
+  c6:	de b7       	in	r29, 0x3e	; 62
+  c8:	9c 83       	std	Y+4, r25	; 0x04
+  ca:	8b 83       	std	Y+3, r24	; 0x03
+  cc:	0f c0       	rjmp	.+30     	; 0xec <delay+0x32>
+	int i;
+	while(x--)
+		for(i=100;i>0;i--);
+  ce:	84 e6       	ldi	r24, 0x64	; 100
+  d0:	90 e0       	ldi	r25, 0x00	; 0
+  d2:	9a 83       	std	Y+2, r25	; 0x02
+  d4:	89 83       	std	Y+1, r24	; 0x01
+  d6:	05 c0       	rjmp	.+10     	; 0xe2 <delay+0x28>
+  d8:	89 81       	ldd	r24, Y+1	; 0x01
+  da:	9a 81       	ldd	r25, Y+2	; 0x02
+  dc:	01 97       	sbiw	r24, 0x01	; 1
+  de:	9a 83       	std	Y+2, r25	; 0x02
+  e0:	89 83       	std	Y+1, r24	; 0x01
+  e2:	89 81       	ldd	r24, Y+1	; 0x01
+  e4:	9a 81       	ldd	r25, Y+2	; 0x02
+  e6:	18 16       	cp	r1, r24
+  e8:	19 06       	cpc	r1, r25
+  ea:	b4 f3       	brlt	.-20     	; 0xd8 <delay+0x1e>
+};
+
+void delay(int x)
+{
+	int i;
+	while(x--)
+  ec:	1d 82       	std	Y+5, r1	; 0x05
+  ee:	8b 81       	ldd	r24, Y+3	; 0x03
+  f0:	9c 81       	ldd	r25, Y+4	; 0x04
+  f2:	00 97       	sbiw	r24, 0x00	; 0
+  f4:	11 f0       	breq	.+4      	; 0xfa <delay+0x40>
+  f6:	81 e0       	ldi	r24, 0x01	; 1
+  f8:	8d 83       	std	Y+5, r24	; 0x05
+  fa:	8b 81       	ldd	r24, Y+3	; 0x03
+  fc:	9c 81       	ldd	r25, Y+4	; 0x04
+  fe:	01 97       	sbiw	r24, 0x01	; 1
+ 100:	9c 83       	std	Y+4, r25	; 0x04
+ 102:	8b 83       	std	Y+3, r24	; 0x03
+ 104:	8d 81       	ldd	r24, Y+5	; 0x05
+ 106:	88 23       	and	r24, r24
+ 108:	11 f7       	brne	.-60     	; 0xce <delay+0x14>
+		for(i=100;i>0;i--);
+}
+ 10a:	0f 90       	pop	r0
+ 10c:	0f 90       	pop	r0
+ 10e:	0f 90       	pop	r0
+ 110:	0f 90       	pop	r0
+ 112:	0f 90       	pop	r0
+ 114:	cf 91       	pop	r28
+ 116:	df 91       	pop	r29
+ 118:	08 95       	ret
+
+0000011a <Write_Max7219_byte>:
+
+//PORTA.0 DIN
+//PORTA.1 CS
+//PORTA.2 CLK
+void Write_Max7219_byte(unsigned char DATA)
+{
+ 11a:	df 93       	push	r29
+ 11c:	cf 93       	push	r28
+ 11e:	00 d0       	rcall	.+0      	; 0x120 <Write_Max7219_byte+0x6>
+ 120:	cd b7       	in	r28, 0x3d	; 61
+ 122:	de b7       	in	r29, 0x3e	; 62
+ 124:	8a 83       	std	Y+2, r24	; 0x02
+	unsigned char i;
+	for (i=8;i>0;i--)
+ 126:	88 e0       	ldi	r24, 0x08	; 8
+ 128:	89 83       	std	Y+1, r24	; 0x01
+ 12a:	26 c0       	rjmp	.+76     	; 0x178 <Write_Max7219_byte+0x5e>
+	{
+		PORTA &=~(1<<PA2);
+ 12c:	ab e3       	ldi	r26, 0x3B	; 59
+ 12e:	b0 e0       	ldi	r27, 0x00	; 0
+ 130:	eb e3       	ldi	r30, 0x3B	; 59
+ 132:	f0 e0       	ldi	r31, 0x00	; 0
+ 134:	80 81       	ld	r24, Z
+ 136:	8b 7f       	andi	r24, 0xFB	; 251
+ 138:	8c 93       	st	X, r24
+		if(DATA & 0x80) PORTA |= (1<<PA0);
+ 13a:	8a 81       	ldd	r24, Y+2	; 0x02
+ 13c:	88 23       	and	r24, r24
+ 13e:	44 f4       	brge	.+16     	; 0x150 <Write_Max7219_byte+0x36>
+ 140:	ab e3       	ldi	r26, 0x3B	; 59
+ 142:	b0 e0       	ldi	r27, 0x00	; 0
+ 144:	eb e3       	ldi	r30, 0x3B	; 59
+ 146:	f0 e0       	ldi	r31, 0x00	; 0
+ 148:	80 81       	ld	r24, Z
+ 14a:	81 60       	ori	r24, 0x01	; 1
+ 14c:	8c 93       	st	X, r24
+ 14e:	07 c0       	rjmp	.+14     	; 0x15e <Write_Max7219_byte+0x44>
+		else PORTA &=~(1<<PA0);
+ 150:	ab e3       	ldi	r26, 0x3B	; 59
+ 152:	b0 e0       	ldi	r27, 0x00	; 0
+ 154:	eb e3       	ldi	r30, 0x3B	; 59
+ 156:	f0 e0       	ldi	r31, 0x00	; 0
+ 158:	80 81       	ld	r24, Z
+ 15a:	8e 7f       	andi	r24, 0xFE	; 254
+ 15c:	8c 93       	st	X, r24
+		DATA <<= 1;
+ 15e:	8a 81       	ldd	r24, Y+2	; 0x02
+ 160:	88 0f       	add	r24, r24
+ 162:	8a 83       	std	Y+2, r24	; 0x02
+		PORTA |= (1<<PA2);
+ 164:	ab e3       	ldi	r26, 0x3B	; 59
+ 166:	b0 e0       	ldi	r27, 0x00	; 0
+ 168:	eb e3       	ldi	r30, 0x3B	; 59
+ 16a:	f0 e0       	ldi	r31, 0x00	; 0
+ 16c:	80 81       	ld	r24, Z
+ 16e:	84 60       	ori	r24, 0x04	; 4
+ 170:	8c 93       	st	X, r24
+//PORTA.1 CS
+//PORTA.2 CLK
+void Write_Max7219_byte(unsigned char DATA)
+{
+	unsigned char i;
+	for (i=8;i>0;i--)
+ 172:	89 81       	ldd	r24, Y+1	; 0x01
+ 174:	81 50       	subi	r24, 0x01	; 1
+ 176:	89 83       	std	Y+1, r24	; 0x01
+ 178:	89 81       	ldd	r24, Y+1	; 0x01
+ 17a:	88 23       	and	r24, r24
+ 17c:	b9 f6       	brne	.-82     	; 0x12c <Write_Max7219_byte+0x12>
+		if(DATA & 0x80) PORTA |= (1<<PA0);
+		else PORTA &=~(1<<PA0);
+		DATA <<= 1;
+		PORTA |= (1<<PA2);
+	}
+} 
+ 17e:	0f 90       	pop	r0
+ 180:	0f 90       	pop	r0
+ 182:	cf 91       	pop	r28
+ 184:	df 91       	pop	r29
+ 186:	08 95       	ret
+
+00000188 <Write_Max7219>:
+
+void Write_Max7219(unsigned char address,unsigned char dat)
+{ 
+ 188:	df 93       	push	r29
+ 18a:	cf 93       	push	r28
+ 18c:	00 d0       	rcall	.+0      	; 0x18e <Write_Max7219+0x6>
+ 18e:	cd b7       	in	r28, 0x3d	; 61
+ 190:	de b7       	in	r29, 0x3e	; 62
+ 192:	89 83       	std	Y+1, r24	; 0x01
+ 194:	6a 83       	std	Y+2, r22	; 0x02
+     PORTA &=~(1<<PA1);
+ 196:	ab e3       	ldi	r26, 0x3B	; 59
+ 198:	b0 e0       	ldi	r27, 0x00	; 0
+ 19a:	eb e3       	ldi	r30, 0x3B	; 59
+ 19c:	f0 e0       	ldi	r31, 0x00	; 0
+ 19e:	80 81       	ld	r24, Z
+ 1a0:	8d 7f       	andi	r24, 0xFD	; 253
+ 1a2:	8c 93       	st	X, r24
+	 Write_Max7219_byte(address);           //write address£¬scan in row
+ 1a4:	89 81       	ldd	r24, Y+1	; 0x01
+ 1a6:	0e 94 8d 00 	call	0x11a	; 0x11a <Write_Max7219_byte>
+     Write_Max7219_byte(dat);               //write data£¬scan in column
+ 1aa:	8a 81       	ldd	r24, Y+2	; 0x02
+ 1ac:	0e 94 8d 00 	call	0x11a	; 0x11a <Write_Max7219_byte>
+	 PORTA |=(1<<PA1);                       
+ 1b0:	ab e3       	ldi	r26, 0x3B	; 59
+ 1b2:	b0 e0       	ldi	r27, 0x00	; 0
+ 1b4:	eb e3       	ldi	r30, 0x3B	; 59
+ 1b6:	f0 e0       	ldi	r31, 0x00	; 0
+ 1b8:	80 81       	ld	r24, Z
+ 1ba:	82 60       	ori	r24, 0x02	; 2
+ 1bc:	8c 93       	st	X, r24
+}
+ 1be:	0f 90       	pop	r0
+ 1c0:	0f 90       	pop	r0
+ 1c2:	cf 91       	pop	r28
+ 1c4:	df 91       	pop	r29
+ 1c6:	08 95       	ret
+
+000001c8 <Init_MAX7219>:
+
+void Init_MAX7219(void)
+{
+ 1c8:	df 93       	push	r29
+ 1ca:	cf 93       	push	r28
+ 1cc:	cd b7       	in	r28, 0x3d	; 61
+ 1ce:	de b7       	in	r29, 0x3e	; 62
+	Write_Max7219(0x09, 0x00);       //no decoded mode
+ 1d0:	89 e0       	ldi	r24, 0x09	; 9
+ 1d2:	60 e0       	ldi	r22, 0x00	; 0
+ 1d4:	0e 94 c4 00 	call	0x188	; 0x188 <Write_Max7219>
+	Write_Max7219(0x0a, 0x0f);       //luminance
+ 1d8:	8a e0       	ldi	r24, 0x0A	; 10
+ 1da:	6f e0       	ldi	r22, 0x0F	; 15
+ 1dc:	0e 94 c4 00 	call	0x188	; 0x188 <Write_Max7219>
+	Write_Max7219(0x0b, 0x07);       //Scan line£»0~7
+ 1e0:	8b e0       	ldi	r24, 0x0B	; 11
+ 1e2:	67 e0       	ldi	r22, 0x07	; 7
+ 1e4:	0e 94 c4 00 	call	0x188	; 0x188 <Write_Max7219>
+	Write_Max7219(0x0c, 0x01);       //Power lost mode£º0£¬Normal £º1
+ 1e8:	8c e0       	ldi	r24, 0x0C	; 12
+ 1ea:	61 e0       	ldi	r22, 0x01	; 1
+ 1ec:	0e 94 c4 00 	call	0x188	; 0x188 <Write_Max7219>
+	Write_Max7219(0x0f, 0x00);       //display test£º1£»End Of Test£¬normal display£º0
+ 1f0:	8f e0       	ldi	r24, 0x0F	; 15
+ 1f2:	60 e0       	ldi	r22, 0x00	; 0
+ 1f4:	0e 94 c4 00 	call	0x188	; 0x188 <Write_Max7219>
+}
+ 1f8:	cf 91       	pop	r28
+ 1fa:	df 91       	pop	r29
+ 1fc:	08 95       	ret
+
+000001fe <main>:
+int main(void)
+{
+ 1fe:	df 93       	push	r29
+ 200:	cf 93       	push	r28
+ 202:	00 d0       	rcall	.+0      	; 0x204 <main+0x6>
+ 204:	cd b7       	in	r28, 0x3d	; 61
+ 206:	de b7       	in	r29, 0x3e	; 62
+	unsigned char i,j;
+	DDRA |= (1 << PA0) | (1 << PA1) | (1 << PA2);
+ 208:	aa e3       	ldi	r26, 0x3A	; 58
+ 20a:	b0 e0       	ldi	r27, 0x00	; 0
+ 20c:	ea e3       	ldi	r30, 0x3A	; 58
+ 20e:	f0 e0       	ldi	r31, 0x00	; 0
+ 210:	80 81       	ld	r24, Z
+ 212:	87 60       	ori	r24, 0x07	; 7
+ 214:	8c 93       	st	X, r24
+						//PORTA.0 DIN
+						//PORTA.1 CS
+						//PORTA.2 CLK
+	delay(100);
+ 216:	84 e6       	ldi	r24, 0x64	; 100
+ 218:	90 e0       	ldi	r25, 0x00	; 0
+ 21a:	0e 94 5d 00 	call	0xba	; 0xba <delay>
+	Init_MAX7219();
+ 21e:	0e 94 e4 00 	call	0x1c8	; 0x1c8 <Init_MAX7219>
+	while(1)
+	{
+		while(1)
+		{
+			for(j=0;j<36;j++)
+ 222:	19 82       	std	Y+1, r1	; 0x01
+ 224:	2a c0       	rjmp	.+84     	; 0x27a <main+0x7c>
+			{
+				for(i=1;i<9;i++)
+ 226:	81 e0       	ldi	r24, 0x01	; 1
+ 228:	8a 83       	std	Y+2, r24	; 0x02
+ 22a:	1d c0       	rjmp	.+58     	; 0x266 <main+0x68>
+				Write_Max7219(i,disp1[j][i-1]);
+ 22c:	89 81       	ldd	r24, Y+1	; 0x01
+ 22e:	48 2f       	mov	r20, r24
+ 230:	50 e0       	ldi	r21, 0x00	; 0
+ 232:	8a 81       	ldd	r24, Y+2	; 0x02
+ 234:	88 2f       	mov	r24, r24
+ 236:	90 e0       	ldi	r25, 0x00	; 0
+ 238:	9c 01       	movw	r18, r24
+ 23a:	21 50       	subi	r18, 0x01	; 1
+ 23c:	30 40       	sbci	r19, 0x00	; 0
+ 23e:	ca 01       	movw	r24, r20
+ 240:	88 0f       	add	r24, r24
+ 242:	99 1f       	adc	r25, r25
+ 244:	88 0f       	add	r24, r24
+ 246:	99 1f       	adc	r25, r25
+ 248:	88 0f       	add	r24, r24
+ 24a:	99 1f       	adc	r25, r25
+ 24c:	82 0f       	add	r24, r18
+ 24e:	93 1f       	adc	r25, r19
+ 250:	fc 01       	movw	r30, r24
+ 252:	e0 50       	subi	r30, 0x00	; 0
+ 254:	ff 4f       	sbci	r31, 0xFF	; 255
+ 256:	90 81       	ld	r25, Z
+ 258:	8a 81       	ldd	r24, Y+2	; 0x02
+ 25a:	69 2f       	mov	r22, r25
+ 25c:	0e 94 c4 00 	call	0x188	; 0x188 <Write_Max7219>
+	{
+		while(1)
+		{
+			for(j=0;j<36;j++)
+			{
+				for(i=1;i<9;i++)
+ 260:	8a 81       	ldd	r24, Y+2	; 0x02
+ 262:	8f 5f       	subi	r24, 0xFF	; 255
+ 264:	8a 83       	std	Y+2, r24	; 0x02
+ 266:	8a 81       	ldd	r24, Y+2	; 0x02
+ 268:	89 30       	cpi	r24, 0x09	; 9
+ 26a:	00 f3       	brcs	.-64     	; 0x22c <main+0x2e>
+				Write_Max7219(i,disp1[j][i-1]);
+				delay(1000);
+ 26c:	88 ee       	ldi	r24, 0xE8	; 232
+ 26e:	93 e0       	ldi	r25, 0x03	; 3
+ 270:	0e 94 5d 00 	call	0xba	; 0xba <delay>
+	Init_MAX7219();
+	while(1)
+	{
+		while(1)
+		{
+			for(j=0;j<36;j++)
+ 274:	89 81       	ldd	r24, Y+1	; 0x01
+ 276:	8f 5f       	subi	r24, 0xFF	; 255
+ 278:	89 83       	std	Y+1, r24	; 0x01
+ 27a:	89 81       	ldd	r24, Y+1	; 0x01
+ 27c:	84 32       	cpi	r24, 0x24	; 36
+ 27e:	98 f2       	brcs	.-90     	; 0x226 <main+0x28>
+ 280:	d0 cf       	rjmp	.-96     	; 0x222 <main+0x24>
+
+00000282 <_exit>:
+ 282:	f8 94       	cli
+
+00000284 <__stop_program>:
+ 284:	ff cf       	rjmp	.-2      	; 0x284 <__stop_program>

@@ -1,0 +1,962 @@
+
+MAX7219-3M.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         000002a0  00800100  000004d0  00000564  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000004d0  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          000002a0  008003a0  008003a0  00000804  2**0
+                  ALLOC
+  3 .debug_aranges 00000020  00000000  00000000  00000804  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_pubnames 000000c6  00000000  00000000  00000824  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000348  00000000  00000000  000008ea  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 0000017b  00000000  00000000  00000c32  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   0000035f  00000000  00000000  00000dad  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  000000b0  00000000  00000000  0000110c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000123  00000000  00000000  000011bc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000174  00000000  00000000  000012df  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+   4:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+   8:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+   c:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  10:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  14:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  18:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  1c:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  20:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  24:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  28:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  2c:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  30:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  34:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  38:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  3c:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  40:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  44:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  48:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  4c:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  50:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  54:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  58:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  5c:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  60:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  64:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  68:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  6c:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  70:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  74:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  78:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  7c:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  80:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  84:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  88:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+  98:	13 e0       	ldi	r17, 0x03	; 3
+  9a:	a0 e0       	ldi	r26, 0x00	; 0
+  9c:	b1 e0       	ldi	r27, 0x01	; 1
+  9e:	e0 ed       	ldi	r30, 0xD0	; 208
+  a0:	f4 e0       	ldi	r31, 0x04	; 4
+  a2:	02 c0       	rjmp	.+4      	; 0xa8 <.do_copy_data_start>
+
+000000a4 <.do_copy_data_loop>:
+  a4:	05 90       	lpm	r0, Z+
+  a6:	0d 92       	st	X+, r0
+
+000000a8 <.do_copy_data_start>:
+  a8:	a0 3a       	cpi	r26, 0xA0	; 160
+  aa:	b1 07       	cpc	r27, r17
+  ac:	d9 f7       	brne	.-10     	; 0xa4 <.do_copy_data_loop>
+
+000000ae <__do_clear_bss>:
+  ae:	16 e0       	ldi	r17, 0x06	; 6
+  b0:	a0 ea       	ldi	r26, 0xA0	; 160
+  b2:	b3 e0       	ldi	r27, 0x03	; 3
+  b4:	01 c0       	rjmp	.+2      	; 0xb8 <.do_clear_bss_start>
+
+000000b6 <.do_clear_bss_loop>:
+  b6:	1d 92       	st	X+, r1
+
+000000b8 <.do_clear_bss_start>:
+  b8:	a0 34       	cpi	r26, 0x40	; 64
+  ba:	b1 07       	cpc	r27, r17
+  bc:	e1 f7       	brne	.-8      	; 0xb6 <.do_clear_bss_loop>
+  be:	0e 94 4f 02 	call	0x49e	; 0x49e <main>
+  c2:	0c 94 66 02 	jmp	0x4cc	; 0x4cc <_exit>
+
+000000c6 <__bad_interrupt>:
+  c6:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000ca <Change_bit>:
+};
+
+uchar font_loop[84][8];    //Change font of original character in order to match dot matrix.
+						   //It need 4 8x8 dot matrixs for each character, so we must ready	84 space to store data.
+uchar  Change_bit( uchar num)//Change sequence of byte,make the bit0 to bit7 and so on.
+{
+  ca:	28 2f       	mov	r18, r24
+  cc:	90 e0       	ldi	r25, 0x00	; 0
+  ce:	80 e0       	ldi	r24, 0x00	; 0
+	uchar i;
+	uchar temp = 0;
+	for( i = 0; i < 8 ; ++i)
+	{
+		temp <<= 1;
+  d0:	88 0f       	add	r24, r24
+		if(num&0x01) temp |= 0x01;
+  d2:	20 fd       	sbrc	r18, 0
+  d4:	81 60       	ori	r24, 0x01	; 1
+						   //It need 4 8x8 dot matrixs for each character, so we must ready	84 space to store data.
+uchar  Change_bit( uchar num)//Change sequence of byte,make the bit0 to bit7 and so on.
+{
+	uchar i;
+	uchar temp = 0;
+	for( i = 0; i < 8 ; ++i)
+  d6:	9f 5f       	subi	r25, 0xFF	; 255
+  d8:	98 30       	cpi	r25, 0x08	; 8
+  da:	11 f0       	breq	.+4      	; 0xe0 <Change_bit+0x16>
+	{
+		temp <<= 1;
+		if(num&0x01) temp |= 0x01;
+		num >>= 1;
+  dc:	26 95       	lsr	r18
+  de:	f8 cf       	rjmp	.-16     	; 0xd0 <Change_bit+0x6>
+	}
+	return temp;
+}
+  e0:	08 95       	ret
+
+000000e2 <font_charge>:
+void font_charge( uchar *num)//change font and make original character to font_loop[][].
+{                            //num[]:the origrinal character need to change.
+  e2:	6f 92       	push	r6
+  e4:	7f 92       	push	r7
+  e6:	8f 92       	push	r8
+  e8:	9f 92       	push	r9
+  ea:	af 92       	push	r10
+  ec:	bf 92       	push	r11
+  ee:	cf 92       	push	r12
+  f0:	df 92       	push	r13
+  f2:	ef 92       	push	r14
+  f4:	ff 92       	push	r15
+  f6:	0f 93       	push	r16
+  f8:	1f 93       	push	r17
+  fa:	cf 93       	push	r28
+  fc:	df 93       	push	r29
+  fe:	7c 01       	movw	r14, r24
+ 100:	70 ef       	ldi	r23, 0xF0	; 240
+ 102:	a7 2e       	mov	r10, r23
+ 104:	7f ef       	ldi	r23, 0xFF	; 255
+ 106:	b7 2e       	mov	r11, r23
+ 108:	a8 0e       	add	r10, r24
+ 10a:	b9 1e       	adc	r11, r25
+ 10c:	cc 24       	eor	r12, r12
+ 10e:	dd 24       	eor	r13, r13
+			temp +=2;
+		}
+
+		temp = num + j*32;//keep address of top-left-1 for each character
+		temp += 1;
+		for(i = 0; i < 8 ; ++i)
+ 110:	63 e5       	ldi	r22, 0x53	; 83
+ 112:	66 2e       	mov	r6, r22
+ 114:	71 2c       	mov	r7, r1
+			temp += 2;   
+		}
+
+		temp = num + j*32;//keep address of bottom-right-2 for each character
+		temp += 30;
+		for(i = 0; i < 8 ; ++i)
+ 116:	52 e5       	ldi	r21, 0x52	; 82
+ 118:	85 2e       	mov	r8, r21
+ 11a:	91 2c       	mov	r9, r1
+		num >>= 1;
+	}
+	return temp;
+}
+void font_charge( uchar *num)//change font and make original character to font_loop[][].
+{                            //num[]:the origrinal character need to change.
+ 11c:	d7 01       	movw	r26, r14
+ 11e:	f6 01       	movw	r30, r12
+ 120:	43 e0       	ldi	r20, 0x03	; 3
+ 122:	ee 0f       	add	r30, r30
+ 124:	ff 1f       	adc	r31, r31
+ 126:	4a 95       	dec	r20
+ 128:	e1 f7       	brne	.-8      	; 0x122 <font_charge+0x40>
+ 12a:	e0 56       	subi	r30, 0x60	; 96
+ 12c:	fc 4f       	sbci	r31, 0xFC	; 252
+ 12e:	90 e0       	ldi	r25, 0x00	; 0
+	for(j=0;j<21;j++)//it need 4 times to change each one characher.We must change all 21 character. 
+	{
+		temp = num + j*32; //keep address of top-right-0 for each character
+		for(i=0;i<8;i++)
+		{
+			font_loop[j*2][i]= *temp;
+ 130:	8c 91       	ld	r24, X
+ 132:	81 93       	st	Z+, r24
+			temp +=2;
+ 134:	12 96       	adiw	r26, 0x02	; 2
+	uchar i,j;
+	uchar *temp;
+	for(j=0;j<21;j++)//it need 4 times to change each one characher.We must change all 21 character. 
+	{
+		temp = num + j*32; //keep address of top-right-0 for each character
+		for(i=0;i<8;i++)
+ 136:	9f 5f       	subi	r25, 0xFF	; 255
+ 138:	98 30       	cpi	r25, 0x08	; 8
+ 13a:	d1 f7       	brne	.-12     	; 0x130 <font_charge+0x4e>
+ 13c:	d6 01       	movw	r26, r12
+ 13e:	33 e0       	ldi	r19, 0x03	; 3
+ 140:	aa 0f       	add	r26, r26
+ 142:	bb 1f       	adc	r27, r27
+ 144:	3a 95       	dec	r19
+ 146:	e1 f7       	brne	.-8      	; 0x140 <font_charge+0x5e>
+ 148:	a8 55       	subi	r26, 0x58	; 88
+ 14a:	bc 4f       	sbci	r27, 0xFC	; 252
+ 14c:	f7 01       	movw	r30, r14
+			temp +=2;
+		}
+
+		temp = num + j*32;//keep address of top-left-1 for each character
+		temp += 1;
+		for(i = 0; i < 8 ; ++i)
+ 14e:	97 01       	movw	r18, r14
+ 150:	20 5f       	subi	r18, 0xF0	; 240
+ 152:	3f 4f       	sbci	r19, 0xFF	; 255
+		{
+			font_loop[j*2+1][i] =  *temp;
+ 154:	81 81       	ldd	r24, Z+1	; 0x01
+ 156:	8d 93       	st	X+, r24
+ 158:	32 96       	adiw	r30, 0x02	; 2
+			temp +=2;
+		}
+
+		temp = num + j*32;//keep address of top-left-1 for each character
+		temp += 1;
+		for(i = 0; i < 8 ; ++i)
+ 15a:	e2 17       	cp	r30, r18
+ 15c:	f3 07       	cpc	r31, r19
+ 15e:	d1 f7       	brne	.-12     	; 0x154 <font_charge+0x72>
+ 160:	83 01       	movw	r16, r6
+ 162:	0c 19       	sub	r16, r12
+ 164:	1d 09       	sbc	r17, r13
+ 166:	23 e0       	ldi	r18, 0x03	; 3
+ 168:	00 0f       	add	r16, r16
+ 16a:	11 1f       	adc	r17, r17
+ 16c:	2a 95       	dec	r18
+ 16e:	e1 f7       	brne	.-8      	; 0x168 <font_charge+0x86>
+ 170:	00 56       	subi	r16, 0x60	; 96
+ 172:	1c 4f       	sbci	r17, 0xFC	; 252
+ 174:	e7 01       	movw	r28, r14
+
+		temp = num + j*32;//keep address of bottom-right-2 for each character
+		temp += 30;
+		for(i = 0; i < 8 ; ++i)
+		{
+			font_loop[83-j*2][i] =Change_bit(*temp) ;
+ 176:	8e 8d       	ldd	r24, Y+30	; 0x1e
+ 178:	0e 94 65 00 	call	0xca	; 0xca <Change_bit>
+ 17c:	f8 01       	movw	r30, r16
+ 17e:	81 93       	st	Z+, r24
+ 180:	8f 01       	movw	r16, r30
+ 182:	22 97       	sbiw	r28, 0x02	; 2
+			temp += 2;   
+		}
+
+		temp = num + j*32;//keep address of bottom-right-2 for each character
+		temp += 30;
+		for(i = 0; i < 8 ; ++i)
+ 184:	ca 15       	cp	r28, r10
+ 186:	db 05       	cpc	r29, r11
+ 188:	b1 f7       	brne	.-20     	; 0x176 <font_charge+0x94>
+ 18a:	84 01       	movw	r16, r8
+ 18c:	0c 19       	sub	r16, r12
+ 18e:	1d 09       	sbc	r17, r13
+ 190:	93 e0       	ldi	r25, 0x03	; 3
+ 192:	00 0f       	add	r16, r16
+ 194:	11 1f       	adc	r17, r17
+ 196:	9a 95       	dec	r25
+ 198:	e1 f7       	brne	.-8      	; 0x192 <font_charge+0xb0>
+ 19a:	00 56       	subi	r16, 0x60	; 96
+ 19c:	1c 4f       	sbci	r17, 0xFC	; 252
+ 19e:	e7 01       	movw	r28, r14
+
+		temp = num + j*32;//keep address of bottom-left-3 for each character
+		temp += 31;
+		for(i = 0; i < 8 ; ++i)
+		{
+			font_loop[83-j*2-1][i] =Change_bit(*temp) ;
+ 1a0:	8f 8d       	ldd	r24, Y+31	; 0x1f
+ 1a2:	0e 94 65 00 	call	0xca	; 0xca <Change_bit>
+ 1a6:	f8 01       	movw	r30, r16
+ 1a8:	81 93       	st	Z+, r24
+ 1aa:	8f 01       	movw	r16, r30
+ 1ac:	22 97       	sbiw	r28, 0x02	; 2
+			temp -= 2;                      
+		}
+
+		temp = num + j*32;//keep address of bottom-left-3 for each character
+		temp += 31;
+		for(i = 0; i < 8 ; ++i)
+ 1ae:	ca 15       	cp	r28, r10
+ 1b0:	db 05       	cpc	r29, r11
+ 1b2:	b1 f7       	brne	.-20     	; 0x1a0 <font_charge+0xbe>
+ 1b4:	82 e0       	ldi	r24, 0x02	; 2
+ 1b6:	90 e0       	ldi	r25, 0x00	; 0
+ 1b8:	c8 0e       	add	r12, r24
+ 1ba:	d9 1e       	adc	r13, r25
+ 1bc:	e0 e2       	ldi	r30, 0x20	; 32
+ 1be:	f0 e0       	ldi	r31, 0x00	; 0
+ 1c0:	ee 0e       	add	r14, r30
+ 1c2:	ff 1e       	adc	r15, r31
+ 1c4:	80 e2       	ldi	r24, 0x20	; 32
+ 1c6:	a8 2e       	mov	r10, r24
+ 1c8:	b1 2c       	mov	r11, r1
+ 1ca:	ac 0e       	add	r10, r28
+ 1cc:	bd 1e       	adc	r11, r29
+}
+void font_charge( uchar *num)//change font and make original character to font_loop[][].
+{                            //num[]:the origrinal character need to change.
+	uchar i,j;
+	uchar *temp;
+	for(j=0;j<21;j++)//it need 4 times to change each one characher.We must change all 21 character. 
+ 1ce:	fa e2       	ldi	r31, 0x2A	; 42
+ 1d0:	cf 16       	cp	r12, r31
+ 1d2:	d1 04       	cpc	r13, r1
+ 1d4:	09 f0       	breq	.+2      	; 0x1d8 <font_charge+0xf6>
+ 1d6:	a2 cf       	rjmp	.-188    	; 0x11c <font_charge+0x3a>
+			font_loop[83-j*2-1][i] =Change_bit(*temp) ;
+			temp -= 2 ;                       
+		}
+
+	}
+}
+ 1d8:	df 91       	pop	r29
+ 1da:	cf 91       	pop	r28
+ 1dc:	1f 91       	pop	r17
+ 1de:	0f 91       	pop	r16
+ 1e0:	ff 90       	pop	r15
+ 1e2:	ef 90       	pop	r14
+ 1e4:	df 90       	pop	r13
+ 1e6:	cf 90       	pop	r12
+ 1e8:	bf 90       	pop	r11
+ 1ea:	af 90       	pop	r10
+ 1ec:	9f 90       	pop	r9
+ 1ee:	8f 90       	pop	r8
+ 1f0:	7f 90       	pop	r7
+ 1f2:	6f 90       	pop	r6
+ 1f4:	08 95       	ret
+
+000001f6 <Delay_xms>:
+void Delay_xms(uint x)//delay 0.1ms
+{
+	uint i,j;
+	for(i=0;i<x;i++)
+		for(j=0;j<100;j++);
+}
+ 1f6:	08 95       	ret
+
+000001f8 <Write_Max7219_byte>:
+
+void Write_Max7219_byte(uchar temp) //write a byte to MAX7219        
+{
+ 1f8:	98 e0       	ldi	r25, 0x08	; 8
+	uchar i;    
+	for(i=8;i >= 1;--i)
+	{		  
+		Max7219_pinCLK0;       
+ 1fa:	c0 98       	cbi	0x18, 0	; 24
+		if (temp&0x80) Max7219_pinDIN1;
+ 1fc:	87 ff       	sbrs	r24, 7
+ 1fe:	02 c0       	rjmp	.+4      	; 0x204 <Write_Max7219_byte+0xc>
+ 200:	c2 9a       	sbi	0x18, 2	; 24
+ 202:	01 c0       	rjmp	.+2      	; 0x206 <Write_Max7219_byte+0xe>
+		else  Max7219_pinDIN0;
+ 204:	c2 98       	cbi	0x18, 2	; 24
+		temp <<= 1;
+		Max7219_pinCLK1;
+ 206:	c0 9a       	sbi	0x18, 0	; 24
+}
+
+void Write_Max7219_byte(uchar temp) //write a byte to MAX7219        
+{
+	uchar i;    
+	for(i=8;i >= 1;--i)
+ 208:	91 50       	subi	r25, 0x01	; 1
+ 20a:	11 f0       	breq	.+4      	; 0x210 <Write_Max7219_byte+0x18>
+	{		  
+		Max7219_pinCLK0;       
+		if (temp&0x80) Max7219_pinDIN1;
+		else  Max7219_pinDIN0;
+		temp <<= 1;
+ 20c:	88 0f       	add	r24, r24
+ 20e:	f5 cf       	rjmp	.-22     	; 0x1fa <Write_Max7219_byte+0x2>
+ 210:	08 95       	ret
+
+00000212 <Write_Max7219>:
+		Max7219_pinCLK1;
+	}                                 
+}
+void Write_Max7219(uchar address,uchar dat, uchar sel)//write data to MAX7219.
+{
+ 212:	ef 92       	push	r14
+ 214:	ff 92       	push	r15
+ 216:	0f 93       	push	r16
+ 218:	1f 93       	push	r17
+ 21a:	08 2f       	mov	r16, r24
+ 21c:	f6 2e       	mov	r15, r22
+ 21e:	e4 2e       	mov	r14, r20
+	uchar good;
+	Max7219_pinCS0;
+ 220:	c1 98       	cbi	0x18, 1	; 24
+ 222:	1c e0       	ldi	r17, 0x0C	; 12
+	good = LED_N;
+	for( ; good > 0; --good )                  //Determine which one equipment operation
+	{
+		Write_Max7219_byte(0x00);               //Write the address, that is, digital tube number
+ 224:	80 e0       	ldi	r24, 0x00	; 0
+ 226:	0e 94 fc 00 	call	0x1f8	; 0x1f8 <Write_Max7219_byte>
+		Write_Max7219_byte(0x00);               //Write data, that is, digital tube display digital	  
+ 22a:	80 e0       	ldi	r24, 0x00	; 0
+ 22c:	0e 94 fc 00 	call	0x1f8	; 0x1f8 <Write_Max7219_byte>
+void Write_Max7219(uchar address,uchar dat, uchar sel)//write data to MAX7219.
+{
+	uchar good;
+	Max7219_pinCS0;
+	good = LED_N;
+	for( ; good > 0; --good )                  //Determine which one equipment operation
+ 230:	11 50       	subi	r17, 0x01	; 1
+ 232:	c1 f7       	brne	.-16     	; 0x224 <Write_Max7219+0x12>
+	{
+		Write_Max7219_byte(0x00);               //Write the address, that is, digital tube number
+		Write_Max7219_byte(0x00);               //Write data, that is, digital tube display digital	  
+	}
+	Write_Max7219_byte(address);           //Write the address, that is, digital tube number
+ 234:	80 2f       	mov	r24, r16
+ 236:	0e 94 fc 00 	call	0x1f8	; 0x1f8 <Write_Max7219_byte>
+	Write_Max7219_byte(dat);               //Write data, that is, digital tube display digital
+ 23a:	8f 2d       	mov	r24, r15
+ 23c:	0e 94 fc 00 	call	0x1f8	; 0x1f8 <Write_Max7219_byte>
+ 240:	1e 2d       	mov	r17, r14
+ 242:	07 c0       	rjmp	.+14     	; 0x252 <Write_Max7219+0x40>
+	good = sel ;
+	for( ; good > 0; --good )                  //Determine which one equipment operation
+	{
+		Write_Max7219_byte(0x00);               //Write the address, that is, digital tube number
+ 244:	80 e0       	ldi	r24, 0x00	; 0
+ 246:	0e 94 fc 00 	call	0x1f8	; 0x1f8 <Write_Max7219_byte>
+		Write_Max7219_byte(0x00);               //Write data, that is, digital tube display dig
+ 24a:	80 e0       	ldi	r24, 0x00	; 0
+ 24c:	0e 94 fc 00 	call	0x1f8	; 0x1f8 <Write_Max7219_byte>
+		Write_Max7219_byte(0x00);               //Write data, that is, digital tube display digital	  
+	}
+	Write_Max7219_byte(address);           //Write the address, that is, digital tube number
+	Write_Max7219_byte(dat);               //Write data, that is, digital tube display digital
+	good = sel ;
+	for( ; good > 0; --good )                  //Determine which one equipment operation
+ 250:	11 50       	subi	r17, 0x01	; 1
+ 252:	11 23       	and	r17, r17
+ 254:	b9 f7       	brne	.-18     	; 0x244 <Write_Max7219+0x32>
+	{
+		Write_Max7219_byte(0x00);               //Write the address, that is, digital tube number
+		Write_Max7219_byte(0x00);               //Write data, that is, digital tube display dig
+	}
+	Max7219_pinCS1;  
+ 256:	c1 9a       	sbi	0x18, 1	; 24
+}
+ 258:	1f 91       	pop	r17
+ 25a:	0f 91       	pop	r16
+ 25c:	ff 90       	pop	r15
+ 25e:	ef 90       	pop	r14
+ 260:	08 95       	ret
+
+00000262 <Initial_comm>:
+void Initial_comm( uchar address,uchar dat)
+{
+ 262:	ff 92       	push	r15
+ 264:	0f 93       	push	r16
+ 266:	1f 93       	push	r17
+ 268:	f8 2e       	mov	r15, r24
+ 26a:	06 2f       	mov	r16, r22
+	uchar i,good;
+	Max7219_pinCS0;
+ 26c:	c1 98       	cbi	0x18, 1	; 24
+ 26e:	10 e0       	ldi	r17, 0x00	; 0
+		Write_Max7219_byte(0x00);               //Write data, that is, digital tube display digital	  
+	}*/
+
+	for( i = 0; i < LED_N ; ++i)
+	{
+		Write_Max7219_byte(address);
+ 270:	8f 2d       	mov	r24, r15
+ 272:	0e 94 fc 00 	call	0x1f8	; 0x1f8 <Write_Max7219_byte>
+		Write_Max7219_byte(dat);
+ 276:	80 2f       	mov	r24, r16
+ 278:	0e 94 fc 00 	call	0x1f8	; 0x1f8 <Write_Max7219_byte>
+	{
+		Write_Max7219_byte(0x00);               //Write the address, that is, digital tube number
+		Write_Max7219_byte(0x00);               //Write data, that is, digital tube display digital	  
+	}*/
+
+	for( i = 0; i < LED_N ; ++i)
+ 27c:	1f 5f       	subi	r17, 0xFF	; 255
+ 27e:	1c 30       	cpi	r17, 0x0C	; 12
+ 280:	b9 f7       	brne	.-18     	; 0x270 <Initial_comm+0xe>
+	{
+		Write_Max7219_byte(address);
+		Write_Max7219_byte(dat);
+	}
+	Max7219_pinCS1;
+ 282:	c1 9a       	sbi	0x18, 1	; 24
+}
+ 284:	1f 91       	pop	r17
+ 286:	0f 91       	pop	r16
+ 288:	ff 90       	pop	r15
+ 28a:	08 95       	ret
+
+0000028c <Init_MAX7219>:
+void Init_MAX7219(void)
+{
+	DDRB |= ( BIT0+BIT1+BIT2);
+ 28c:	87 b3       	in	r24, 0x17	; 23
+ 28e:	87 60       	ori	r24, 0x07	; 7
+ 290:	87 bb       	out	0x17, r24	; 23
+	Max7219_pinCLK0;
+ 292:	c0 98       	cbi	0x18, 0	; 24
+	Max7219_pinCS0;
+ 294:	c1 98       	cbi	0x18, 1	; 24
+	Initial_comm( 0x09,0x00); //Decoding: BCD decoding
+ 296:	89 e0       	ldi	r24, 0x09	; 9
+ 298:	60 e0       	ldi	r22, 0x00	; 0
+ 29a:	0e 94 31 01 	call	0x262	; 0x262 <Initial_comm>
+	Initial_comm( 0x0a, 0x03);//light intensity
+ 29e:	8a e0       	ldi	r24, 0x0A	; 10
+ 2a0:	63 e0       	ldi	r22, 0x03	; 3
+ 2a2:	0e 94 31 01 	call	0x262	; 0x262 <Initial_comm>
+	Initial_comm( 0x0b, 0x07);//Scan line; Eight digital tube display
+ 2a6:	8b e0       	ldi	r24, 0x0B	; 11
+ 2a8:	67 e0       	ldi	r22, 0x07	; 7
+ 2aa:	0e 94 31 01 	call	0x262	; 0x262 <Initial_comm>
+	Initial_comm( 0x0c, 0x01);//Power down mode: 0, normal mode: 1
+ 2ae:	8c e0       	ldi	r24, 0x0C	; 12
+ 2b0:	61 e0       	ldi	r22, 0x01	; 1
+ 2b2:	0e 94 31 01 	call	0x262	; 0x262 <Initial_comm>
+	Initial_comm( 0x0f, 0x00);//Display test: 1; End of the test, normal display: 0
+ 2b6:	8f e0       	ldi	r24, 0x0F	; 15
+ 2b8:	60 e0       	ldi	r22, 0x00	; 0
+ 2ba:	0e 94 31 01 	call	0x262	; 0x262 <Initial_comm>
+
+}
+ 2be:	08 95       	ret
+
+000002c0 <write_word>:
+void write_word( void)//write 3 character to dot matrix.
+{
+ 2c0:	ef 92       	push	r14
+ 2c2:	ff 92       	push	r15
+ 2c4:	0f 93       	push	r16
+ 2c6:	1f 93       	push	r17
+ 2c8:	cf 93       	push	r28
+ 2ca:	df 93       	push	r29
+ 2cc:	ee 24       	eor	r14, r14
+ 2ce:	ff 24       	eor	r15, r15
+ 2d0:	0e 2d       	mov	r16, r14
+	uchar i ,j;
+	for(j = 0; j <= 11 ; ++j)
+	{
+		if(j<6)//write data to dot matrix in top.
+ 2d2:	06 30       	cpi	r16, 0x06	; 6
+ 2d4:	90 f4       	brcc	.+36     	; 0x2fa <write_word+0x3a>
+ 2d6:	e7 01       	movw	r28, r14
+ 2d8:	f3 e0       	ldi	r31, 0x03	; 3
+ 2da:	cc 0f       	add	r28, r28
+ 2dc:	dd 1f       	adc	r29, r29
+ 2de:	fa 95       	dec	r31
+ 2e0:	e1 f7       	brne	.-8      	; 0x2da <write_word+0x1a>
+ 2e2:	c0 56       	subi	r28, 0x60	; 96
+ 2e4:	dc 4f       	sbci	r29, 0xFC	; 252
+ 2e6:	11 e0       	ldi	r17, 0x01	; 1
+		{
+			for(i = 1;i <= 8;++i)
+				Write_Max7219(i,font_loop[j][i-1],j);		
+ 2e8:	81 2f       	mov	r24, r17
+ 2ea:	69 91       	ld	r22, Y+
+ 2ec:	40 2f       	mov	r20, r16
+ 2ee:	0e 94 09 01 	call	0x212	; 0x212 <Write_Max7219>
+	uchar i ,j;
+	for(j = 0; j <= 11 ; ++j)
+	{
+		if(j<6)//write data to dot matrix in top.
+		{
+			for(i = 1;i <= 8;++i)
+ 2f2:	1f 5f       	subi	r17, 0xFF	; 255
+ 2f4:	19 30       	cpi	r17, 0x09	; 9
+ 2f6:	c1 f7       	brne	.-16     	; 0x2e8 <write_word+0x28>
+ 2f8:	16 c0       	rjmp	.+44     	; 0x326 <write_word+0x66>
+ 2fa:	8e 2d       	mov	r24, r14
+ 2fc:	66 e0       	ldi	r22, 0x06	; 6
+ 2fe:	0e 94 5a 02 	call	0x4b4	; 0x4b4 <__udivmodqi4>
+ 302:	c9 2f       	mov	r28, r25
+ 304:	d0 e0       	ldi	r29, 0x00	; 0
+ 306:	e3 e0       	ldi	r30, 0x03	; 3
+ 308:	cc 0f       	add	r28, r28
+ 30a:	dd 1f       	adc	r29, r29
+ 30c:	ea 95       	dec	r30
+ 30e:	e1 f7       	brne	.-8      	; 0x308 <write_word+0x48>
+ 310:	c0 5f       	subi	r28, 0xF0	; 240
+ 312:	d9 4f       	sbci	r29, 0xF9	; 249
+ 314:	11 e0       	ldi	r17, 0x01	; 1
+				Write_Max7219(i,font_loop[j][i-1],j);		
+		}
+		else//write data to matrix in bottom.
+		{
+			for(i = 1;i <= 8;++i)
+				Write_Max7219(i,font_loop[78+j%6][i-1],j);			
+ 316:	81 2f       	mov	r24, r17
+ 318:	69 91       	ld	r22, Y+
+ 31a:	40 2f       	mov	r20, r16
+ 31c:	0e 94 09 01 	call	0x212	; 0x212 <Write_Max7219>
+			for(i = 1;i <= 8;++i)
+				Write_Max7219(i,font_loop[j][i-1],j);		
+		}
+		else//write data to matrix in bottom.
+		{
+			for(i = 1;i <= 8;++i)
+ 320:	1f 5f       	subi	r17, 0xFF	; 255
+ 322:	19 30       	cpi	r17, 0x09	; 9
+ 324:	c1 f7       	brne	.-16     	; 0x316 <write_word+0x56>
+ 326:	08 94       	sec
+ 328:	e1 1c       	adc	r14, r1
+ 32a:	f1 1c       	adc	r15, r1
+
+}
+void write_word( void)//write 3 character to dot matrix.
+{
+	uchar i ,j;
+	for(j = 0; j <= 11 ; ++j)
+ 32c:	8c e0       	ldi	r24, 0x0C	; 12
+ 32e:	e8 16       	cp	r14, r24
+ 330:	f1 04       	cpc	r15, r1
+ 332:	71 f6       	brne	.-100    	; 0x2d0 <write_word+0x10>
+			for(i = 1;i <= 8;++i)
+				Write_Max7219(i,font_loop[78+j%6][i-1],j);			
+		}
+
+	}
+}
+ 334:	df 91       	pop	r29
+ 336:	cf 91       	pop	r28
+ 338:	1f 91       	pop	r17
+ 33a:	0f 91       	pop	r16
+ 33c:	ff 90       	pop	r15
+ 33e:	ef 90       	pop	r14
+ 340:	08 95       	ret
+
+00000342 <Mov_bity>:
+void Mov_bity(void)//move each character in order to see character move in dot matrix.
+{
+ 342:	8f 92       	push	r8
+ 344:	9f 92       	push	r9
+ 346:	af 92       	push	r10
+ 348:	bf 92       	push	r11
+ 34a:	cf 92       	push	r12
+ 34c:	df 92       	push	r13
+ 34e:	ef 92       	push	r14
+ 350:	ff 92       	push	r15
+ 352:	0f 93       	push	r16
+ 354:	1f 93       	push	r17
+ 356:	df 93       	push	r29
+ 358:	cf 93       	push	r28
+ 35a:	cd b7       	in	r28, 0x3d	; 61
+ 35c:	de b7       	in	r29, 0x3e	; 62
+ 35e:	60 97       	sbiw	r28, 0x10	; 16
+ 360:	0f b6       	in	r0, 0x3f	; 63
+ 362:	f8 94       	cli
+ 364:	de bf       	out	0x3e, r29	; 62
+ 366:	0f be       	out	0x3f, r0	; 63
+ 368:	cd bf       	out	0x3d, r28	; 61
+ 36a:	a0 ea       	ldi	r26, 0xA0	; 160
+ 36c:	b3 e0       	ldi	r27, 0x03	; 3
+ 36e:	20 e0       	ldi	r18, 0x00	; 0
+ 370:	30 e0       	ldi	r19, 0x00	; 0
+	uchar temp1,temp2,i,j;
+	uchar ktemp1[8],ktemp2[8];
+	for(i=0;i<8;i++)
+	{
+		ktemp1[i]=font_loop[0][i];
+ 372:	be 01       	movw	r22, r28
+ 374:	6f 5f       	subi	r22, 0xFF	; 255
+ 376:	7f 4f       	sbci	r23, 0xFF	; 255
+		ktemp2[i]=font_loop[83][i];
+ 378:	ae 01       	movw	r20, r28
+ 37a:	47 5f       	subi	r20, 0xF7	; 247
+ 37c:	5f 4f       	sbci	r21, 0xFF	; 255
+{
+	uchar temp1,temp2,i,j;
+	uchar ktemp1[8],ktemp2[8];
+	for(i=0;i<8;i++)
+	{
+		ktemp1[i]=font_loop[0][i];
+ 37e:	fb 01       	movw	r30, r22
+ 380:	e2 0f       	add	r30, r18
+ 382:	f3 1f       	adc	r31, r19
+ 384:	8c 91       	ld	r24, X
+ 386:	80 83       	st	Z, r24
+		ktemp2[i]=font_loop[83][i];
+ 388:	fa 01       	movw	r30, r20
+ 38a:	e2 0f       	add	r30, r18
+ 38c:	f3 1f       	adc	r31, r19
+ 38e:	a8 56       	subi	r26, 0x68	; 104
+ 390:	bd 4f       	sbci	r27, 0xFD	; 253
+ 392:	8c 91       	ld	r24, X
+ 394:	80 83       	st	Z, r24
+ 396:	2f 5f       	subi	r18, 0xFF	; 255
+ 398:	3f 4f       	sbci	r19, 0xFF	; 255
+ 39a:	a7 59       	subi	r26, 0x97	; 151
+ 39c:	b2 40       	sbci	r27, 0x02	; 2
+}
+void Mov_bity(void)//move each character in order to see character move in dot matrix.
+{
+	uchar temp1,temp2,i,j;
+	uchar ktemp1[8],ktemp2[8];
+	for(i=0;i<8;i++)
+ 39e:	28 30       	cpi	r18, 0x08	; 8
+ 3a0:	31 05       	cpc	r19, r1
+ 3a2:	69 f7       	brne	.-38     	; 0x37e <Mov_bity+0x3c>
+ 3a4:	ee 24       	eor	r14, r14
+ 3a6:	ff 24       	eor	r15, r15
+	{
+		ktemp1[i]=font_loop[0][i];
+		ktemp2[i]=font_loop[83][i];
+	}
+	for(i=0;i<42;i++)
+ 3a8:	92 e5       	ldi	r25, 0x52	; 82
+ 3aa:	89 2e       	mov	r8, r25
+ 3ac:	91 2c       	mov	r9, r1
+				font_loop[i][j] = (font_loop[i][j]<<1) | ((temp1&0x80)>>7);      //move top dot matrix to right
+				font_loop[83-i][j] = (font_loop[83-i][j]>>1) | ((temp2&0x01)<<7);//move bottom dot matrix to left
+			}
+			else
+			{
+				font_loop[41][j]=(font_loop[41][j]<<1)|((ktemp1[j]&0x80)>>7);//change bit8 of font_loop[0] to bit0 of font_loop[41]
+ 3ae:	5e 01       	movw	r10, r28
+ 3b0:	08 94       	sec
+ 3b2:	a1 1c       	adc	r10, r1
+ 3b4:	b1 1c       	adc	r11, r1
+				font_loop[42][j]=(font_loop[42][j]>>1)|((ktemp2[j]&0x01)<<7);//change bit0 of font_loop[83] to bit8 of font_loop[43]
+ 3b6:	89 e0       	ldi	r24, 0x09	; 9
+ 3b8:	c8 2e       	mov	r12, r24
+ 3ba:	d1 2c       	mov	r13, r1
+ 3bc:	cc 0e       	add	r12, r28
+ 3be:	dd 1e       	adc	r13, r29
+ 3c0:	44 c0       	rjmp	.+136    	; 0x44a <Mov_bity+0x108>
+	}
+	for(i=0;i<42;i++)
+	{
+		for(j=0;j<8;j++)
+		{	
+			temp1=font_loop[i+1][j];
+ 3c2:	f9 01       	movw	r30, r18
+ 3c4:	90 85       	ldd	r25, Z+8	; 0x08
+			temp2=font_loop[82-i][j];
+ 3c6:	4c 91       	ld	r20, X
+			if(i<41)
+ 3c8:	f9 e2       	ldi	r31, 0x29	; 41
+ 3ca:	ef 16       	cp	r14, r31
+ 3cc:	a1 f0       	breq	.+40     	; 0x3f6 <Mov_bity+0xb4>
+			{
+				font_loop[i][j] = (font_loop[i][j]<<1) | ((temp1&0x80)>>7);      //move top dot matrix to right
+ 3ce:	f9 01       	movw	r30, r18
+ 3d0:	80 81       	ld	r24, Z
+ 3d2:	88 0f       	add	r24, r24
+ 3d4:	99 1f       	adc	r25, r25
+ 3d6:	99 27       	eor	r25, r25
+ 3d8:	99 1f       	adc	r25, r25
+ 3da:	89 2b       	or	r24, r25
+ 3dc:	80 83       	st	Z, r24
+				font_loop[83-i][j] = (font_loop[83-i][j]>>1) | ((temp2&0x01)<<7);//move bottom dot matrix to left
+ 3de:	47 95       	ror	r20
+ 3e0:	44 27       	eor	r20, r20
+ 3e2:	47 95       	ror	r20
+ 3e4:	18 96       	adiw	r26, 0x08	; 8
+ 3e6:	8c 91       	ld	r24, X
+ 3e8:	18 97       	sbiw	r26, 0x08	; 8
+ 3ea:	86 95       	lsr	r24
+ 3ec:	48 2b       	or	r20, r24
+ 3ee:	18 96       	adiw	r26, 0x08	; 8
+ 3f0:	4c 93       	st	X, r20
+ 3f2:	18 97       	sbiw	r26, 0x08	; 8
+ 3f4:	19 c0       	rjmp	.+50     	; 0x428 <Mov_bity+0xe6>
+			}
+			else
+			{
+				font_loop[41][j]=(font_loop[41][j]<<1)|((ktemp1[j]&0x80)>>7);//change bit8 of font_loop[0] to bit0 of font_loop[41]
+ 3f6:	fb 01       	movw	r30, r22
+ 3f8:	90 81       	ld	r25, Z
+ 3fa:	99 0f       	add	r25, r25
+ 3fc:	f5 01       	movw	r30, r10
+ 3fe:	e0 0f       	add	r30, r16
+ 400:	f1 1f       	adc	r31, r17
+ 402:	80 81       	ld	r24, Z
+ 404:	88 1f       	adc	r24, r24
+ 406:	88 27       	eor	r24, r24
+ 408:	88 1f       	adc	r24, r24
+ 40a:	98 2b       	or	r25, r24
+ 40c:	fb 01       	movw	r30, r22
+ 40e:	90 83       	st	Z, r25
+				font_loop[42][j]=(font_loop[42][j]>>1)|((ktemp2[j]&0x01)<<7);//change bit0 of font_loop[83] to bit8 of font_loop[43]
+ 410:	f6 01       	movw	r30, r12
+ 412:	e0 0f       	add	r30, r16
+ 414:	f1 1f       	adc	r31, r17
+ 416:	90 81       	ld	r25, Z
+ 418:	97 95       	ror	r25
+ 41a:	99 27       	eor	r25, r25
+ 41c:	97 95       	ror	r25
+ 41e:	fb 01       	movw	r30, r22
+ 420:	80 85       	ldd	r24, Z+8	; 0x08
+ 422:	86 95       	lsr	r24
+ 424:	98 2b       	or	r25, r24
+ 426:	90 87       	std	Z+8, r25	; 0x08
+ 428:	0f 5f       	subi	r16, 0xFF	; 255
+ 42a:	1f 4f       	sbci	r17, 0xFF	; 255
+ 42c:	2f 5f       	subi	r18, 0xFF	; 255
+ 42e:	3f 4f       	sbci	r19, 0xFF	; 255
+ 430:	11 96       	adiw	r26, 0x01	; 1
+ 432:	6f 5f       	subi	r22, 0xFF	; 255
+ 434:	7f 4f       	sbci	r23, 0xFF	; 255
+		ktemp1[i]=font_loop[0][i];
+		ktemp2[i]=font_loop[83][i];
+	}
+	for(i=0;i<42;i++)
+	{
+		for(j=0;j<8;j++)
+ 436:	08 30       	cpi	r16, 0x08	; 8
+ 438:	11 05       	cpc	r17, r1
+ 43a:	19 f6       	brne	.-122    	; 0x3c2 <Mov_bity+0x80>
+ 43c:	08 94       	sec
+ 43e:	e1 1c       	adc	r14, r1
+ 440:	f1 1c       	adc	r15, r1
+	for(i=0;i<8;i++)
+	{
+		ktemp1[i]=font_loop[0][i];
+		ktemp2[i]=font_loop[83][i];
+	}
+	for(i=0;i<42;i++)
+ 442:	fa e2       	ldi	r31, 0x2A	; 42
+ 444:	ef 16       	cp	r14, r31
+ 446:	f1 04       	cpc	r15, r1
+ 448:	b9 f0       	breq	.+46     	; 0x478 <Mov_bity+0x136>
+ 44a:	97 01       	movw	r18, r14
+ 44c:	03 e0       	ldi	r16, 0x03	; 3
+ 44e:	22 0f       	add	r18, r18
+ 450:	33 1f       	adc	r19, r19
+ 452:	0a 95       	dec	r16
+ 454:	e1 f7       	brne	.-8      	; 0x44e <Mov_bity+0x10c>
+ 456:	20 56       	subi	r18, 0x60	; 96
+ 458:	3c 4f       	sbci	r19, 0xFC	; 252
+ 45a:	d4 01       	movw	r26, r8
+ 45c:	ae 19       	sub	r26, r14
+ 45e:	bf 09       	sbc	r27, r15
+ 460:	13 e0       	ldi	r17, 0x03	; 3
+ 462:	aa 0f       	add	r26, r26
+ 464:	bb 1f       	adc	r27, r27
+ 466:	1a 95       	dec	r17
+ 468:	e1 f7       	brne	.-8      	; 0x462 <Mov_bity+0x120>
+ 46a:	a0 56       	subi	r26, 0x60	; 96
+ 46c:	bc 4f       	sbci	r27, 0xFC	; 252
+ 46e:	68 ee       	ldi	r22, 0xE8	; 232
+ 470:	74 e0       	ldi	r23, 0x04	; 4
+ 472:	00 e0       	ldi	r16, 0x00	; 0
+ 474:	10 e0       	ldi	r17, 0x00	; 0
+ 476:	a5 cf       	rjmp	.-182    	; 0x3c2 <Mov_bity+0x80>
+				font_loop[41][j]=(font_loop[41][j]<<1)|((ktemp1[j]&0x80)>>7);//change bit8 of font_loop[0] to bit0 of font_loop[41]
+				font_loop[42][j]=(font_loop[42][j]>>1)|((ktemp2[j]&0x01)<<7);//change bit0 of font_loop[83] to bit8 of font_loop[43]
+			}
+		}
+	}
+}
+ 478:	60 96       	adiw	r28, 0x10	; 16
+ 47a:	0f b6       	in	r0, 0x3f	; 63
+ 47c:	f8 94       	cli
+ 47e:	de bf       	out	0x3e, r29	; 62
+ 480:	0f be       	out	0x3f, r0	; 63
+ 482:	cd bf       	out	0x3d, r28	; 61
+ 484:	cf 91       	pop	r28
+ 486:	df 91       	pop	r29
+ 488:	1f 91       	pop	r17
+ 48a:	0f 91       	pop	r16
+ 48c:	ff 90       	pop	r15
+ 48e:	ef 90       	pop	r14
+ 490:	df 90       	pop	r13
+ 492:	cf 90       	pop	r12
+ 494:	bf 90       	pop	r11
+ 496:	af 90       	pop	r10
+ 498:	9f 90       	pop	r9
+ 49a:	8f 90       	pop	r8
+ 49c:	08 95       	ret
+
+0000049e <main>:
+int main()
+{
+	Delay_xms(50);
+	Init_MAX7219(); 
+ 49e:	0e 94 46 01 	call	0x28c	; 0x28c <Init_MAX7219>
+	while(1)
+	{
+		font_charge(*font);//change character 
+ 4a2:	80 e0       	ldi	r24, 0x00	; 0
+ 4a4:	91 e0       	ldi	r25, 0x01	; 1
+ 4a6:	0e 94 71 00 	call	0xe2	; 0xe2 <font_charge>
+		write_word();
+ 4aa:	0e 94 60 01 	call	0x2c0	; 0x2c0 <write_word>
+		while(1)
+		{
+			Mov_bity();
+ 4ae:	0e 94 a1 01 	call	0x342	; 0x342 <Mov_bity>
+ 4b2:	fb cf       	rjmp	.-10     	; 0x4aa <main+0xc>
+
+000004b4 <__udivmodqi4>:
+ 4b4:	99 1b       	sub	r25, r25
+ 4b6:	79 e0       	ldi	r23, 0x09	; 9
+ 4b8:	04 c0       	rjmp	.+8      	; 0x4c2 <__udivmodqi4_ep>
+
+000004ba <__udivmodqi4_loop>:
+ 4ba:	99 1f       	adc	r25, r25
+ 4bc:	96 17       	cp	r25, r22
+ 4be:	08 f0       	brcs	.+2      	; 0x4c2 <__udivmodqi4_ep>
+ 4c0:	96 1b       	sub	r25, r22
+
+000004c2 <__udivmodqi4_ep>:
+ 4c2:	88 1f       	adc	r24, r24
+ 4c4:	7a 95       	dec	r23
+ 4c6:	c9 f7       	brne	.-14     	; 0x4ba <__udivmodqi4_loop>
+ 4c8:	80 95       	com	r24
+ 4ca:	08 95       	ret
+
+000004cc <_exit>:
+ 4cc:	f8 94       	cli
+
+000004ce <__stop_program>:
+ 4ce:	ff cf       	rjmp	.-2      	; 0x4ce <__stop_program>
